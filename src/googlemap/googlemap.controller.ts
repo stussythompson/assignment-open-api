@@ -11,6 +11,9 @@ export class GooglemapController {
         return this.googlemapService.autoComplete(input);
     }
 
-    
+    @Get('placesearch/:query')
+    async getUserInfo(@Param('query') query: string ){
+        return this.googlemapService.textSearch(query);
+    }
 
 }
